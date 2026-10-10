@@ -429,10 +429,10 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
   if (loadMaps)
     LoadMapsSync();
 
+  // Al-Haswa Magellan: purple downloaded regions overlay disabled by default
   if (m_infoGetter->HasRegionTriangles())
   {
-    m_showDownloadedRegions = true;
-    UNUSED_VALUE(settings::Get(kShowDownloadedRegions, m_showDownloadedRegions));
+    m_showDownloadedRegions = IsShowDownloadedRegions();
   }
 }
 
